@@ -1,0 +1,4 @@
+gcloud sql connect nxe6-1 --user=root
+'USE titanic_nxe6;
+'DESCRIBE titanic;
+'EXIT;
