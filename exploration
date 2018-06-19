@@ -13,13 +13,6 @@ def ReadFile(filepath):
   return df
 
 
-# Called with dataframe and filepath, writing data to CSV file
-
-def WriteFile(df, filepath):
-  df.to_csv(filepath)
-  return
-  
-
 # Called with dataframe, showing simple preview
 
 def PreviewFile(df):
@@ -27,3 +20,18 @@ def PreviewFile(df):
   df.tail(10)
   df.columns
   return
+
+
+# Called with dataframe and filepath, writing data to CSV file
+
+def WriteFile(df, filepath):
+  df.to_csv(filepath)
+  return
+
+
+# Calling all functions
+
+filepath = "gs://my_first_bucket_nxe6/Titanic"
+ReadFile(filepath)
+PreviewFile(df)
+WriteFile(df, filepath)
