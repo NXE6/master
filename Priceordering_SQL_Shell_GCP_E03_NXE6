@@ -1,0 +1,3 @@
+USE E03;
+SELECT m.date AS StartDate, mt.date AS NextDate, m.price AS StartPrice, mt.price AS NextPrice, mt.price-m.price AS PriceDiff FROM Prices m JOIN Prices mt ON m.date < mt.date AND mt.date = (SELECT MIN(date) FROM Prices WHERE date > m.date) order by PriceDiff Desc LIMIT 1;
+SELECT date, sum(qty)/(SELECT sum(qty) from Sales)*100  AS 'Daily%Contr' FROM Sales GROUP BY 1;
